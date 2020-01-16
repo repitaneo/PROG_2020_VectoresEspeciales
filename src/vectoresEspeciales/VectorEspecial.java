@@ -25,10 +25,7 @@ public class VectorEspecial {
 		contador = 0;
 	}
 	
-	
-	
-	
-	
+
 	
 	public void add(int dato) {
 		
@@ -38,6 +35,23 @@ public class VectorEspecial {
 			contador++;
 		}
 	}
+	
+	
+	
+	
+	public void imprimir() {
+		
+		System.out.println("Aqui caben "+datos.length+" elementos");
+		System.out.println("Hay "+contador+" elementos");
+		
+		for(int i=0;i<datos.length;i++) {
+			
+			System.out.print(datos[i] +" ");
+		}
+		System.out.println();
+	}
+	
+	
 	
 	
 	
