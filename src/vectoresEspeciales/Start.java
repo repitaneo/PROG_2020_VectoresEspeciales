@@ -7,8 +7,8 @@ public class Start {
 
 		VectorEspecial informacion = new VectorEspecial(4);
 		
-		informacion.add(4);
-		informacion.add(12);
+		informacion.add(0);
+		informacion.add(0);
 		informacion.imprimir();
 
 		System.out.println("*********************");

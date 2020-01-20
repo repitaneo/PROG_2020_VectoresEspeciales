@@ -3,8 +3,12 @@ package vectoresEspeciales;
 public class VectorEspecial {
 
 	
+	
 	private int datos[];
 	private int contador;
+	private int valorMinimo; 
+	private int cuantosPares;
+	
 	
 	
 	
@@ -23,33 +27,127 @@ public class VectorEspecial {
 		
 		datos = new int[tamanio];
 		contador = 0;
+		valorMinimo = 100000;
+		cuantosPares = 0;
 	}
 	
 
 	
+	
+	
 	public void add(int dato) {
 		
+		// si hay sitio
 		if(contador<datos.length) {
 			
+			// inserto e incremento el tamaño
 			datos[contador] = dato;
 			contador++;
+
+			// resto de operaciones de las que no
+			// soy responsable
+			calcularSiEsMinimo(dato);
+			mirarSiEsPar(dato);
+		}
+	}
+
+
+
+
+
+	private void mirarSiEsPar(int dato) {
+		// miro si es par
+		if(dato%2==0) {
+			
+			cuantosPares++;
+		}
+	}
+
+
+
+
+
+	private void calcularSiEsMinimo(int dato) {
+		// miro si es minimo
+		if(dato<valorMinimo) {
+			
+			valorMinimo = dato;
 		}
 	}
 	
 	
 	
 	
+	
+	/**
+	 * 
+	 */
 	public void imprimir() {
 		
 		System.out.println("Aqui caben "+datos.length+" elementos");
 		System.out.println("Hay "+contador+" elementos");
 		
-		for(int i=0;i<datos.length;i++) {
+		for(int i=0;i<contador;i++) {
 			
 			System.out.print(datos[i] +" ");
 		}
 		System.out.println();
+	}	
+	
+	
+	
+	
+	
+	/**
+	 * Devuelve el valor maximo del vector recorriendolo
+	 * @return
+	 */
+	public int getValorMaximo() {
+		
+		int maximo = -100000;
+		
+		if(contador>0) {
+			
+			maximo = datos[0];
+		}
+	
+		// recorrer el vector
+		for(int i=1;i<contador;i++) {
+			
+			// mirar y comparar con el maximo
+			if(datos[i]>maximo) {
+				
+				maximo = datos[i];
+			}
+		}
+		return maximo;
+		
 	}
+	
+	
+	
+	
+	/**
+	 * Devuelve el valor minimo directamente
+	 * @return
+	 */
+	public int getValorMinimo() {
+		
+		return valorMinimo;
+	}
+	
+	
+	
+	
+	/**
+	 * Devuelve cuantos son pares de manera directa
+	 * @return
+	 */
+	public int getCuantosPares() {
+		
+		return cuantosPares;
+	}
+	
 	
 	
 	
