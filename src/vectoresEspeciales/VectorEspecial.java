@@ -154,11 +154,15 @@ public class VectorEspecial {
 	
 	public void addOrdenado(int dato) {
 		
-		int donde = buscar(dato);
-		abrirHueco(donde);
+		if(contador<datos.length) {
 		
-		imprimir();
-		
+			int donde = buscar(dato);
+			abrirHueco(donde);
+
+			// añado
+			contador++;
+			datos[donde] = dato;
+		}
 	}
 
 
@@ -169,11 +173,12 @@ public class VectorEspecial {
 	
 	
 
-	private void abrirHueco(int donde) {
+	private void abrirHueco(int hueco) {
 		
-		
-		
-		
+		for(int i=contador;i>hueco;i--) {
+			
+			datos[i] = datos[i-1];
+		}
 	}
 
 
