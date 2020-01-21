@@ -152,5 +152,53 @@ public class VectorEspecial {
 	
 	
 	
+	public void addOrdenado(int dato) {
+		
+		int donde = buscar(dato);
+		abrirHueco(donde);
+		
+		imprimir();
+		
+	}
+
+
+
+	
+	
+	
+	
+	
+
+	private void abrirHueco(int donde) {
+		
+		
+		
+		
+	}
+
+
+
+
+
+	/**
+	 * Busca un hueco en el vector donde iría el dato
+	 * @param dato
+	 * @return
+	 */
+	private int buscar(int dato) {
+		
+		int donde = 0;
+		
+		while((datos[donde]<dato)&&(donde<contador)) {
+			
+			donde++;
+		}
+		
+		return donde;
+	}
+	
+	
+	
+	
 	
 }
