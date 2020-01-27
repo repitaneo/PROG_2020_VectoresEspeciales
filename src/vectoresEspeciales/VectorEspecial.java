@@ -167,12 +167,6 @@ public class VectorEspecial {
 
 
 
-	
-	
-	
-	
-	
-
 	private void abrirHueco(int hueco) {
 		
 		for(int i=contador;i>hueco;i--) {
@@ -200,6 +194,36 @@ public class VectorEspecial {
 		}
 		
 		return donde;
+	}
+
+
+
+
+
+	public VectorEspecial combinar(VectorEspecial elOtroVector) {
+		
+		VectorEspecial combinado = new VectorEspecial(contador+elOtroVector.contador);
+		
+		int ojoEnV1 = 0;
+		int ojoEnV2 = 0;
+		
+		for (int i=0; i<combinado.datos.length; i++) {
+			
+			if(this.datos[ojoEnV1]>elOtroVector.datos[ojoEnV2]) {
+				
+				combinado.datos[i] = elOtroVector.datos[ojoEnV2];
+				ojoEnV2++;
+			}
+			else {
+				
+				combinado.datos[i] = this.datos[ojoEnV1];
+				ojoEnV1++;
+			}
+			
+		}
+		combinado.contador = combinado.datos.length;
+		
+		return combinado;
 	}
 	
 	
