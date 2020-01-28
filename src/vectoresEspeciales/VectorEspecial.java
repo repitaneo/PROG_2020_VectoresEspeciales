@@ -92,6 +92,7 @@ public class VectorEspecial {
 			System.out.print(datos[i] +" ");
 		}
 		System.out.println();
+		System.out.println();
 	}	
 	
 	
@@ -209,7 +210,17 @@ public class VectorEspecial {
 		
 		for (int i=0; i<combinado.datos.length; i++) {
 			
-			if(this.datos[ojoEnV1]>elOtroVector.datos[ojoEnV2]) {
+			if(ojoEnV1==this.contador) {
+				
+				combinado.datos[i] = elOtroVector.datos[ojoEnV2];
+				ojoEnV2++;
+			}
+			else if(ojoEnV2==elOtroVector.contador) {
+				
+				combinado.datos[i] = this.datos[ojoEnV1];
+				ojoEnV1++;
+			}
+			else if(this.datos[ojoEnV1]>elOtroVector.datos[ojoEnV2]) {
 				
 				combinado.datos[i] = elOtroVector.datos[ojoEnV2];
 				ojoEnV2++;
